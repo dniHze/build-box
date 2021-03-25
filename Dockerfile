@@ -48,13 +48,14 @@ RUN add-apt-repository ppa:git-core/ppa > /dev/null && \
         git \
         m4 \
         ncurses-dev \
+        openjdk-8-jdk \
         openjdk-11-jdk \
         unzip \
         vim-tiny \
         wget \
         zip \
         gh \
-        ruby rubygems-integration \
+        ruby ruby-dev rubygems-integration \
         zlib1g-dev > /dev/null && \
     echo "set timezone" && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
@@ -98,3 +99,5 @@ RUN echo "build tools 29-30" && \
 # Copy sdk license agreement files.
 RUN mkdir -p $ANDROID_HOME/licenses
 COPY sdk/licenses/* $ANDROID_HOME/licenses/
+
+ENV JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
