@@ -48,7 +48,7 @@ RUN add-apt-repository ppa:git-core/ppa > /dev/null && \
         git \
         m4 \
         ncurses-dev \
-        openjdk-8-jdk \
+        openjdk-11-jdk \
         unzip \
         vim-tiny \
         wget \
